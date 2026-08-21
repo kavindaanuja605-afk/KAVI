@@ -1,105 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KAVI TOP UP</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#050b2b;
-color:#fff;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#050816;color:#fff}
+header{position:sticky;top:0;z-index:100;background:#081126;border-bottom:1px solid #1c3158;padding:15px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:bold;color:#39b9ff}
+.logo span{color:#fff}
+nav{display:flex;gap:22px}
+nav a{color:#ddd;text-decoration:none;font-size:14px}
+nav a:hover{color:#39b9ff}
+.menu{display:none;font-size:25px}
 
-header{
-padding:28px 16px;
-text-align:center;
-background:linear-gradient(135deg,#071b7a,#04102f);
-}
+.hero{padding:70px 6%;text-align:center;background:radial-gradient(circle at top,#12356b 0%,#050816 55%)}
+.hero h1{font-size:48px;margin-bottom:15px}
+.hero h1 span{color:#39b9ff}
+.hero p{color:#b9c4d8;font-size:17px;margin-bottom:28px}
 
-.logo{
-width:150px;
-height:150px;
-object-fit:cover;
-border-radius:50%;
-display:block;
-margin:0 auto 15px;
-box-shadow:0 0 25px #168cff;
-}
+.btn{display:inline-block;padding:13px 25px;border-radius:10px;background:#168cff;color:white;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
+.btn:hover{opacity:.85}
 
-h1{
-margin:0;
-font-size:38px;
-letter-spacing:2px;
-}
+.container{width:88%;max-width:1200px;margin:auto}
+.section{padding:50px 0}
+.title{text-align:center;margin-bottom:30px}
+.title h2{font-size:30px}
+.title p{color:#8997ad;margin-top:8px}
 
-.subtitle{
-margin-top:8px;
-color:#dbe4ff;
-}
+.search{width:100%;padding:15px;background:#0b1428;color:white;border:1px solid #263b61;border-radius:10px;outline:none;margin-bottom:25px}
 
-.container{
-max-width:950px;
-margin:auto;
-padding:22px 16px;
-}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.category{background:#0b1428;border:1px solid #20375d;padding:25px;border-radius:15px;text-align:center;cursor:pointer}
+.category:hover{border-color:#39b9ff;transform:translateY(-3px)}
+.category .icon{font-size:40px;margin-bottom:12px}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:12px;
-}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#0b1428;border:1px solid #20375d;border-radius:15px;padding:22px}
+.card h3{margin-bottom:10px}
+.diamonds{color:#39b9ff;font-size:22px;font-weight:bold}
+.price{font-size:20px;margin:15px 0}
+.order-btn{width:100%;padding:12px;border:none;border-radius:9px;background:#168cff;color:#fff;cursor:pointer;font-weight:bold}
 
-.card{
-background:#0b1748;
-border:1px solid #2747ad;
-border-radius:14px;
-padding:16px;
-text-align:center;
-}
+.order{background:#081126;border:1px solid #20375d;border-radius:16px;padding:30px;max-width:650px;margin:auto}
+.input{width:100%;padding:13px;margin:8px 0 15px;background:#050816;color:white;border:1px solid #2b4168;border-radius:8px;outline:none}
 
-.price{
-margin-top:8px;
-color:#ffd43b;
-font-size:18px;
-font-weight:bold;
-}
+.payment{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.payment-box{background:#0b1428;border:1px solid #20375d;padding:22px;border-radius:14px}
+.payment-box h3{margin-bottom:10px;color:#39b9ff}
 
-.order{
-margin-top:28px;
-background:#0b1748;
-border-radius:16px;
-padding:20px;
-}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:#0b1428;border:1px solid #20375d;padding:25px;border-radius:14px}
+.step-number{font-size:30px;color:#39b9ff;font-weight:bold;margin-bottom:10px}
 
-input,select{
-width:100%;
-box-sizing:border-box;
-padding:13px;
-margin:7px 0 12px;
-border-radius:9px;
-border:1px solid #4965ba;
-background:#071137;
-color:#fff;
-}
+.contact{text-align:center;background:#081126;padding:40px 20px;border-radius:16px}
 
-button{
-width:100%;
-padding:14px;
-border:0;
-border-radius:10px;
-background:#1db954;
-color:#fff;
-font-size:17px;
-font-weight:bold;
-}
+footer{margin-top:50px;padding:30px;text-align:center;color:#8997ad;background:#030610}
 
-.note{
-font-size:13px;
-color:#c8d2f4;
-line-height:1.5;
+.whatsapp{position:fixed;right:20px;bottom:20px;width:55px;height:55px;border-radius:50%;background:#20c968;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;font-size:27px;box-shadow:0 5px 20px #000;z-index:200}
+
+@media(max-width:750px){
+nav{display:none;position:absolute;top:65px;left:0;right:0;background:#081126;padding:20px;flex-direction:column;text-align:center}
+nav.show{display:flex}
+.menu{display:block;cursor:pointer}
+.hero{padding:55px 5%}
+.hero h1{font-size:36px}
+.categories,.products,.payment,.steps{grid-template-columns:1fr}
+.container{width:92%}
 }
 </style>
 </head>
@@ -107,119 +76,300 @@ line-height:1.5;
 <body>
 
 <header>
+<div class="logo">KAVI <span>TOP UP</span></div>
 
-<img src="Neon KAVI Free Fire Top-Up Emblem.png" alt="KAVI TOP UP Logo" class="logo">
+<nav id="nav">
+<a href="#home">Home</a>
+<a href="#games">Games</a>
+<a href="#products">Packages</a>
+<a href="#order">Order</a>
+<a href="#payment">Payment</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<h1>𝐊𝐀𝐕𝐈 𝐓𝐎𝐏 𝐔𝐏</h1>
-
-<div class="subtitle">Free Fire Diamond Store</div>
-
+<div class="menu" onclick="toggleMenu()">☰</div>
 </header>
 
+<section class="hero" id="home">
+<h1>Welcome to <span>KAVI TOP UP</span></h1>
+<p>Fast • Easy • Trusted Game Top Up Service</p>
+<a href="#products" class="btn">View Packages</a>
+</section>
+
+<section class="section" id="games">
 <div class="container">
-
-<h2>💎 Diamond Packages</h2>
-
-<div class="grid">
-
-<div class="card"><b>💎 25 Diamonds</b><div class="price">LKR 90</div></div>
-<div class="card"><b>💎 50 Diamonds</b><div class="price">LKR 180</div></div>
-<div class="card"><b>💎 100 Diamonds</b><div class="price">LKR 320</div></div>
-<div class="card"><b>💎 200 Diamonds</b><div class="price">LKR 520</div></div>
-<div class="card"><b>💎 310 Diamonds</b><div class="price">LKR 990</div></div>
-<div class="card"><b>💎 400 Diamonds</b><div class="price">LKR 1,040</div></div>
-<div class="card"><b>💎 520 Diamonds</b><div class="price">LKR 1,630</div></div>
-<div class="card"><b>💎 600 Diamonds</b><div class="price">LKR 1,560</div></div>
-<div class="card"><b>💎 800 Diamonds</b><div class="price">LKR 2,080</div></div>
-<div class="card"><b>💎 1000 Diamonds</b><div class="price">LKR 2,680</div></div>
-<div class="card"><b>💎 1060 Diamonds</b><div class="price">LKR 3,180</div></div>
-<div class="card"><b>💎 2000 Diamonds</b><div class="price">LKR 5,360</div></div>
-<div class="card"><b>💎 2180 Diamonds</b><div class="price">LKR 6,370</div></div>
-<div class="card"><b>💎 3000 Diamonds</b><div class="price">LKR 8,040</div></div>
-<div class="card"><b>💎 4000 Diamonds</b><div class="price">LKR 10,720</div></div>
-<div class="card"><b>💎 5600 Diamonds</b><div class="price">LKR 15,800</div></div>
-
+<div class="title">
+<h2>🎮 Select Your Game</h2>
+<p>Choose a game to continue</p>
 </div>
 
-<h2>🎟️ Memberships & Passes</h2>
+<div class="categories">
 
-<div class="grid">
+<div class="category" onclick="selectGame('Free Fire')">
+<div class="icon">🔥</div>
+<h3>Free Fire</h3>
+<p>Diamonds Top Up</p>
+</div>
 
-<div class="card"><b>Weekly Lite</b><div class="price">LKR 130</div></div>
-<div class="card"><b>Weekly</b><div class="price">LKR 520</div></div>
-<div class="card"><b>Monthly</b><div class="price">LKR 2,680</div></div>
-<div class="card"><b>VIP Membership</b><div class="price">LKR 3,200</div></div>
-<div class="card"><b>S VIP Membership</b><div class="price">LKR 4,760</div></div>
-<div class="card"><b>Level Up Pass</b><div class="price">LKR 1,400</div></div>
+<div class="category" onclick="selectGame('PUBG Mobile')">
+<div class="icon">🔫</div>
+<h3>PUBG Mobile</h3>
+<p>UC Top Up</p>
+</div>
 
+<div class="category" onclick="selectGame('Other')">
+<div class="icon">🎮</div>
+<h3>Other Games</h3>
+<p>Contact Us</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="products">
+<div class="container">
+
+<div class="title">
+<h2>💎 Free Fire Diamonds</h2>
+<p>Select your package</p>
+</div>
+
+<input class="search" id="search" type="text"
+placeholder="🔎 Search diamond package..."
+onkeyup="searchProducts()">
+
+<div class="products" id="productList">
+
+<div class="card product">
+<h3>💎 Free Fire</h3>
+<div class="diamonds">100 Diamonds</div>
+<div class="price">Rs. 250</div>
+<button class="order-btn" onclick="choosePackage('100 Diamonds','Rs. 250')">Order Now</button>
+</div>
+
+<div class="card product">
+<h3>💎 Free Fire</h3>
+<div class="diamonds">310 Diamonds</div>
+<div class="price">Rs. 700</div>
+<button class="order-btn" onclick="choosePackage('310 Diamonds','Rs. 700')">Order Now</button>
+</div>
+
+<div class="card product">
+<h3>💎 Free Fire</h3>
+<div class="diamonds">520 Diamonds</div>
+<div class="price">Rs. 1,150</div>
+<button class="order-btn" onclick="choosePackage('520 Diamonds','Rs. 1,150')">Order Now</button>
+</div>
+
+<div class="card product">
+<h3>💎 Free Fire</h3>
+<div class="diamonds">1060 Diamonds</div>
+<div class="price">Rs. 2,200</div>
+<button class="order-btn" onclick="choosePackage('1060 Diamonds','Rs. 2,200')">Order Now</button>
+</div>
+
+<div class="card product">
+<h3>💎 Free Fire</h3>
+<div class="diamonds">2180 Diamonds</div>
+<div class="price">Rs. 4,400</div>
+<button class="order-btn" onclick="choosePackage('2180 Diamonds','Rs. 4,400')">Order Now</button>
+</div>
+
+<div class="card product">
+<h3>💎 Free Fire</h3>
+<div class="diamonds">5600 Diamonds</div>
+<div class="price">Rs. 10,500</div>
+<button class="order-btn" onclick="choosePackage('5600 Diamonds','Rs. 10,500')">Order Now</button>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="order">
+<div class="container">
+
+<div class="title">
+<h2>🛒 Place Your Order</h2>
+<p>Enter your game details</p>
 </div>
 
 <div class="order">
 
-<h2>📦 Place an Order</h2>
-
-<label>Free Fire Player UID</label>
-<input id="uid" placeholder="Enter Player UID">
-
-<label>Select Package</label>
-
-<select id="package">
-<option>25 Diamonds — LKR 90</option>
-<option>50 Diamonds — LKR 180</option>
-<option>100 Diamonds — LKR 320</option>
-<option>200 Diamonds — LKR 520</option>
-<option>310 Diamonds — LKR 990</option>
-<option>400 Diamonds — LKR 1,040</option>
-<option>520 Diamonds — LKR 1,630</option>
-<option>600 Diamonds — LKR 1,560</option>
-<option>800 Diamonds — LKR 2,080</option>
-<option>1000 Diamonds — LKR 2,680</option>
-<option>1060 Diamonds — LKR 3,180</option>
-<option>2000 Diamonds — LKR 5,360</option>
-<option>2180 Diamonds — LKR 6,370</option>
-<option>3000 Diamonds — LKR 8,040</option>
-<option>4000 Diamonds — LKR 10,720</option>
-<option>5600 Diamonds — LKR 15,800</option>
-<option>Weekly Lite — LKR 130</option>
-<option>Weekly — LKR 520</option>
-<option>Monthly — LKR 2,680</option>
-<option>VIP Membership — LKR 3,200</option>
-<option>S VIP Membership — LKR 4,760</option>
-<option>Level Up Pass — LKR 1,400</option>
+<label>Game</label>
+<select class="input" id="game">
+<option>Free Fire</option>
+<option>PUBG Mobile</option>
+<option>Other</option>
 </select>
 
-<button onclick="sendOrder()">Order via WhatsApp</button>
+<label>Package</label>
+<input class="input" id="package" placeholder="Example: 100 Diamonds">
 
-<p class="note">
-Never send your password, OTP, PIN, or card CVV.
-Only provide your Free Fire UID and selected package.
-</p>
+<label>Player UID / ID</label>
+<input class="input" id="uid" placeholder="Enter your Player UID">
 
+<label>Your Name</label>
+<input class="input" id="name" placeholder="Enter your name">
+
+<label>WhatsApp Number</label>
+<input class="input" id="phone" placeholder="07XXXXXXXX">
+
+<button class="btn" style="width:100%" onclick="sendOrder()">
+📱 Order via WhatsApp
+</button>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="payment">
+<div class="container">
+
+<div class="title">
+<h2>💳 Payment Methods</h2>
+<p>Choose your preferred payment method</p>
+</div>
+
+<div class="payment">
+
+<div class="payment-box">
+<h3>🏦 Bank Transfer</h3>
+<p>Bank details will be provided after placing the order.</p>
+</div>
+
+<div class="payment-box">
+<h3>📱 Mobile Payment</h3>
+<p>Contact KAVI TOP UP on WhatsApp for payment details.</p>
+</div>
+
+<div class="payment-box">
+<h3>💬 WhatsApp</h3>
+<p>Send your order details and receive payment instructions.</p>
 </div>
 
 </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="title">
+<h2>⚡ How To Order</h2>
+</div>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">01</div>
+<h3>Select Package</h3>
+<p>Choose your required game package.</p>
+</div>
+
+<div class="step">
+<div class="step-number">02</div>
+<h3>Send UID</h3>
+<p>Enter your correct Player UID and details.</p>
+</div>
+
+<div class="step">
+<div class="step-number">03</div>
+<h3>Complete Payment</h3>
+<p>Follow the payment instructions and wait for confirmation.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container">
+
+<div class="contact">
+<h2>📞 Contact KAVI TOP UP</h2>
+<br>
+<p>Need help with your order?</p>
+<br>
+
+<a class="btn"
+href="https://wa.me/94767443071"
+target="_blank">
+💬 WhatsApp Us
+</a>
+
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 KAVI TOP UP</p>
+<p>Fast • Easy • Trusted</p>
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/94767443071"
+target="_blank">💬</a>
 
 <script>
+
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("show");
+}
+
+function selectGame(game){
+document.getElementById("game").value=game;
+document.getElementById("order").scrollIntoView({behavior:"smooth"});
+}
+
+function choosePackage(packageName,price){
+document.getElementById("package").value=packageName+" - "+price;
+document.getElementById("order").scrollIntoView({behavior:"smooth"});
+}
+
+function searchProducts(){
+
+let input=document.getElementById("search").value.toLowerCase();
+let products=document.querySelectorAll(".product");
+
+products.forEach(function(product){
+
+let text=product.innerText.toLowerCase();
+
+product.style.display=text.includes(input)?"block":"none";
+
+});
+}
+
 function sendOrder(){
 
-const uid=document.getElementById('uid').value.trim();
-const pkg=document.getElementById('package').value;
+let game=document.getElementById("game").value;
+let pack=document.getElementById("package").value;
+let uid=document.getElementById("uid").value;
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
 
-if(!uid){
-alert('Please enter your Free Fire UID.');
+if(pack==="" || uid==="" || name===""){
+alert("Please fill Package, UID and Name.");
 return;
 }
 
-const msg=encodeURIComponent(
-"KAVI TOP UP Order\nUID: "+uid+"\nPackage: "+pkg
-);
+let message=
+"KAVI TOP UP ORDER%0A%0A"+
+"🎮 Game: "+game+"%0A"+
+"💎 Package: "+pack+"%0A"+
+"🆔 UID: "+uid+"%0A"+
+"👤 Name: "+name+"%0A"+
+"📱 Phone: "+phone;
 
 window.open(
-"https://wa.me/94768931529?text="+msg,
+"https://wa.me/94767443071?text="+message,
 "_blank"
 );
 
 }
+
 </script>
 
 </body>
